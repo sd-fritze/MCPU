@@ -19,9 +19,9 @@ Mechanisch, Organisatorisch:
 Elektrisch:
 
     * Mögliche Technologien:
-          o Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
-          o Good ol' TTL
-          o CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
+        o Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
+        o Good ol' TTL
+        o CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
 
 
 Architektonisch:
