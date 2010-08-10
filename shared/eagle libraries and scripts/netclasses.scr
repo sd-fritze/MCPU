@@ -1,0 +1,6 @@
+#Cl  ID Name		Width	Clear	Drill	Matrix
+class 0 Signal 		12mil	0mil	20mil	0:8mil
+Class 1 LoVolt42 	24mil	0mil	20mil	0:32mil 	1:12mil
+Class 2 MedVolt100 	24mil	0mil	20mil	0:64mil 	1:64mil 	2:32mil
+Class 3 LineVolt350 32mil	0mil	20mil	0:500mil 	1:500mil 	2:500mil 	3:100mil
+
