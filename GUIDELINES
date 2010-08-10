@@ -1,0 +1,15 @@
+## Was kommt wo hin? ##
+
+Damit das hier nicht in endlosem Durcheinander endet:
+
+Vorlagen, die alle Benutzen können, gehören nach 
+/templates
+
+Alles was zu den Modulen gehört, kommt nach 
+/modules/xxx
+
+also z.B. /modules/cpu
+
+In diesen Ordner gehören *.brd und *.sch.
+Unterordner sind natürlich erlaubt.
+
