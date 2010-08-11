@@ -1,15 +1,42 @@
-## Was kommt wo hin? ##
+### Verbindliche Richtlinien für alle Entwickler ###
 
-Damit das hier nicht in endlosem Durcheinander endet:
+Bitte haltet euch an diese Richtlinien, um eine klare Struktur zu bewahren.
+Dieses Dokument ist bei Änderungen der Projektstruktur unverzüglich anzugleichen.
 
-Vorlagen, die alle Benutzen können, gehören nach 
-/templates
 
-Alles was zu den Modulen gehört, kommt nach 
-/modules/xxx
+ORDNERSTRUKTUR
 
-also z.B. /modules/cpu
+/                      Root
+|
++---modules
+|   |
+|   +---ram            Layout für RAM-Modul
+|
++---templates          Vorlagen, die alle benutzen sollten
+|   |
+|   +---eagle          EAGLE-Ressourcen; Scripts, Design Rules, Librarys
+|   |
+|   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
+|
++---modules            Modulvorlagen
+|   |
+|   +---core           Layout für Systemboard
+|   |
+|   +---misc           Layout für sonstiges Modul
+|
+|
+GUIDLINES              Verbindliche Richtlinien
+README                 Liesmich
 
-In diesen Ordner gehören *.brd und *.sch.
-Unterordner sind natürlich erlaubt.
+Sofern nicht anderes angegeben, handelt es sich bei Layouts um Dateien im
+CadSoft EAGLE-Format.
+Schaltplan und Board (.brd,.sch) ) gehören immer zusammen in ein Verzeichnis.
 
+
+NOMENKLATUR
+
+- Ordner- und Dateinamen ausschließlich lowercase
+- Kurze, aber prägnante Ordnernamen wählen
+- Dateinamen unverwechselbar machen (wenn das Board ein Template ist,
+  sollte der Dateiname 'template' enthalten)
+- Bitte vornehmlich englische Ordner- und Dateinamen verwenden
