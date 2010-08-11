@@ -1,47 +1,23 @@
+### Eckdaten des Projekts ###
 
-Es kam, wie es kommen musste; hboy007 hat mir ein Angebot gemacht, dass ich nicht ablehnen konnte:
-
-Wir bauen einen Prozessor!
-
-
-Es folgt der derzeitige Stand der Überlegungen. Diese Liste wird bei Bedarf erweitert.
-Wenn das Projekt Anklang finde und es uns in diesem Thread zu unübersichtlich wird,
-kann man auch über das Eröffnen einer eigenen Kategorie im Forum nachdenken.
+TOPOLOGIEN
+    - Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
+    - Good ol' TTL
+    - CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
 
 
-Mechanisch, Organisatorisch:
-
-    * Modularer Aufbau auf Europlatinen
-        o genormte Befestigungsbohrungen (Staplung per Distanzhülsen)
-        o genormter Backplane zur Verbindung der Module untereinander
-
-
-Elektrisch:
-
-    * Mögliche Technologien:
-        o Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
-        o Good ol' TTL
-        o CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
+ARCHITEKTUR
+    - Von-Neumann Architektur; 8 Bit Daten, 16 Bit Adressen
+    - Little Endian
+    - 4-phasige Clock: FETCH, DECODE, EXECUTE, WRITEBACK
+    - Mikrocode
 
 
-Architektonisch:
+BAUTEILE
+    Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein.
 
-    * Von-Neumann Architektur; 8 Bit Daten, 16 Bit Adressen
-    * Mikrocode
-    * 4-phasige Clock: FETCH, DECODE, EXECUTE, WRITEBACK
-	
-Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein. 
-
-	Selbst Pollin kann i.A. nicht als Bezugsquelle angeführt werden,
-	daher müssen wir wohl auf die Bildröhre verzichten. Das Projekt
-	verfolgt weiters eine divide&conquer-Strategie: Jeder Teilnehmende
-	entwickelt mindestens ein Modul und diese Module stehen den restlichen
-	Teilnehmenden mindestens als Bausatz zur Verfügung (gemeinsame 
-	Teilebestellungen machen die Sache billiger, gemeinsame Platinenfertigung
-	in größerem Volumen macht die Sache schneller und angenehmer für die Gesamtheit)
-	
-
-
-
-
-
+    Das Projekt verfolgt weiters eine Divide&Conquer-Strategie: Jeder Teilnehmende
+    entwickelt mindestens ein Modul und diese Module stehen den restlichen
+    Teilnehmenden mindestens als Bausatz zur Verfügung; gemeinsame Teilebestellungen
+    machen die Sache billiger, gemeinsame Platinenfertigung in größerem Volumen
+    macht die Sache schneller und angenehmer für die Gesamtheit.
