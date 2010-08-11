@@ -11,6 +11,7 @@ ORDNERSTRUKTUR
 +---modules
 |   |
 |   +---ram            Layout für RAM-Modul
+|   +---debug		   Layout für Debug-Modul
 |
 +---templates          Vorlagen, die alle benutzen sollten
 |   |
