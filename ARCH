@@ -1,4 +1,4 @@
-Temporäre Datei, nur um den Überblick zu behalten (Paul).
+### Registerlayout ###
 
 SRC/DST		REGISTER	DESC
 -------		--------	----
@@ -9,7 +9,7 @@ SRC/DST		REGISTER	DESC
 00100		MARL		Memory Address Register (Low)
 00101		MARH		Memory Address Register (High)
 00110		MDR			Memory Data Register (Bus access)
-00111		CR			Constant Register
+00111		CIR			Current Instruction Register
 
 01000		XL			X-Pointer (Low)
 01001		XH			X-Pointer (High)
@@ -17,23 +17,23 @@ SRC/DST		REGISTER	DESC
 01011		XH			Y-Pointer (High)
 01100		ZL			Z-Pointer (Low)
 01101		ZH			Z-Pointer (High)
-01110		r0			GPR 0
-01111		r1			GPR 1
+01110		-			Unused
+01111		-			Unused
 
-10000		r2			GPR 2
-10001		r3			GPR 3
-10010		r4			GPR 4
-10011		r5			GPR 5
-10100		r6			GPR 6
-10101		r7			GPR 7
-10110		r8			GPR 8
-10111		r9			GPR 9
+10000		R0			GPR 0
+10001		R1			GPR 1
+10010		R2			GPR 2
+10011		R3			GPR 3
+10100		R4			GPR 4
+10101		R5			GPR 5
+10110		R6			GPR 6
+10111		R7			GPR 7
 
-11000		r10			GPR 10
-11001		r11			GPR 11
-11010		OPA			ALU Operand A
-11011		OPB			ALU Operand B
-11100		RES			ALU Result
-11101		FLG			Flags Register
-11110		CIR			Current Instruction Register
-11111		-			Void (nop)
+11000		R8			GPR 8
+11001		R9			GPR 9
+11010		R10			GPR 10
+11011		R11			GPR 11
+11100		OPA			ALU Operand A
+11101		OPB			ALU Operand B
+11110		RES			ALU Result
+11111		FLG			Flags Register
