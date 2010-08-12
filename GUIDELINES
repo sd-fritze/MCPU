@@ -8,9 +8,10 @@ ORDNERSTRUKTUR
 
 /                      Root
 |
-+---modules
++---modules            Layouts für alle Module
 |   |
-|   +---ram            Layout für RAM-Modul
+|   +---core_1         Layout für Kernmodul 1
+|   +---core_2         Layout für Kernmodul 2
 |   +---debug		   Layout für Debug-Modul
 |
 +---templates          Vorlagen, die alle benutzen sollten
