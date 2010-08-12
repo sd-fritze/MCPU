@@ -10,8 +10,14 @@ ORDNERSTRUKTUR
 |
 +---modules            Layouts für alle Module
 |   |
-|   +---core_1         Layout für Kernmodul 1
-|   +---core_2         Layout für Kernmodul 2
+|   +---clock          Taktmodul
+|   |
+|   +---core           Kernmodule
+|   |   |
+|   |   +---core_1     Kernmodul 1
+|   |   +---core_2     Kernmodul 2
+|   |   +---core_3     Kernmodul 2
+|   |
 |   +---debug		   Layout für Debug-Modul
 |
 +---templates          Vorlagen, die alle benutzen sollten
