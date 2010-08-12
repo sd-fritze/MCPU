@@ -1,0 +1,39 @@
+Temporäre Datei, nur um den Überblick zu behalten (Paul).
+
+SRC/DST		REGISTER	DESC
+-------		--------	----
+00000		PCL			Program Counter (Low)
+00001		PCH			Program Counter (High)
+00010		SPL			Stack Pointer (Low)
+00011		SPH			Stack Pointer (High)
+00100		MARL		Memory Address Register (Low)
+00101		MARH		Memory Address Register (High)
+00110		MDR			Memory Data Register (Bus access)
+00111		CR			Constant Register
+
+01000		XL			X-Pointer (Low)
+01001		XH			X-Pointer (High)
+01010		YL			Y-Pointer (Low)
+01011		XH			Y-Pointer (High)
+01100		ZL			Z-Pointer (Low)
+01101		ZH			Z-Pointer (High)
+01110		r0			GPR 0
+01111		r1			GPR 1
+
+10000		r2			GPR 2
+10001		r3			GPR 3
+10010		r4			GPR 4
+10011		r5			GPR 5
+10100		r6			GPR 6
+10101		r7			GPR 7
+10110		r8			GPR 8
+10111		r9			GPR 9
+
+11000		r10			GPR 10
+11001		r11			GPR 11
+11010		OPA			ALU Operand A
+11011		OPB			ALU Operand B
+11100		RES			ALU Result
+11101		FLG			Flags Register
+11110		CIR			Current Instruction Register
+11111		-			Void (nop)
