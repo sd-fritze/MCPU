@@ -69,7 +69,7 @@ TOPOLOGIEN
 ARCHITEKTUR
     - Von-Neumann Architektur; 8 Bit Daten, 16 Bit Adressen
     - Little Endian
-    - 4-phasige Clock: FETCH, DECODE, EXECUTE, WRITEBACK
+    - 1-phasige Clock
     - Mikrocode
 
 
