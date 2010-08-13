@@ -10,17 +10,21 @@ ORDNERSTRUKTUR
 
 /                      Root
 |
-+---modules            Layouts fr alle Module
++---modules            Layouts für alle Module
 |   |
 |   +---clock          Taktmodul
 |   |
 |   +---core           Kernmodule
 |   |   |
 |   |   +---core_1     Kernmodul 1
+|   |                    INT flip-flop; register CIR+latch; microcode sequencer
 |   |   +---core_2     Kernmodul 2
-|   |   +---core_3     Kernmodul 2
+|   |                    registers MARH,MARL,PCH,PCL; PC to MAR logic;
+|   |                    MDR (just a transceiver); /BUSREAD,BUSWRITE generator
+|   |   +---core_3     Kernmodul 3
+|   |                    /MME_L generator; RAM; registers SPH,SPL
 |   |
-|   +---debug		   Layout für Debug-Modul
+|   +---debug		   Debug-Modul
 |
 +---templates          Vorlagen, die alle benutzen sollten
 |   |
