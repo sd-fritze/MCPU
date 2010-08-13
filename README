@@ -29,15 +29,15 @@ ORDNERSTRUKTUR
 |   +---modules            Modulvorlagen
 |       |
 |       +---core           Layout für Systemboard
-|       |
+|       +---core_alu       Layout für Systemboard mit ALU-Interface
 |       +---misc           Layout für sonstiges Modul
 |
-+---docs    
++---docs
 |   |
 |   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
 |
 |
-GUIDLINES              Verbindliche Richtlinien
+NOTES                  Temporäre Notizen - Immer mal wieder reinschauen!
 README                 Liesmich
 
 
