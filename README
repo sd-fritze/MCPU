@@ -1,9 +1,67 @@
+####################################################
+### Verbindliche Richtlinien für alle Entwickler ###
+####################################################
+
+Bitte haltet euch an diese Richtlinien, um eine klare Struktur zu bewahren.
+Dieses Dokument ist bei Änderungen der Projektstruktur unverzüglich anzugleichen.
+
+
+ORDNERSTRUKTUR
+
+/                      Root
+|
++---modules            Layouts für alle Module
+|   |
+|   +---clock          Taktmodul
+|   |
+|   +---core           Kernmodule
+|   |   |
+|   |   +---core_1     Kernmodul 1
+|   |   +---core_2     Kernmodul 2
+|   |   +---core_3     Kernmodul 2
+|   |
+|   +---debug		   Layout für Debug-Modul
+|
++---templates          Vorlagen, die alle benutzen sollten
+|   |
+|   +---eagle          EAGLE-Ressourcen; Scripts, Design Rules, Librarys
+|   |
+|   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
+|
++---modules            Modulvorlagen
+|   |
+|   +---core           Layout für Systemboard
+|   |
+|   +---misc           Layout für sonstiges Modul
+|
+|
+GUIDLINES              Verbindliche Richtlinien
+README                 Liesmich
+
+
+Sofern nicht anderes angegeben, handelt es sich bei Layouts um Dateien im
+CadSoft EAGLE-Format.
+Schaltplan und Board (.brd,.sch) gehören immer zusammen in ein Verzeichnis.
+
+
+NOMENKLATUR
+
+- Ordner- und Dateinamen ausschließlich lowercase
+- Kurze, aber prägnante Ordnernamen wählen
+- Dateinamen unverwechselbar machen (wenn das Board ein Template ist,
+  sollte der Dateiname 'template' enthalten)
+- Bitte vornehmlich englische Ordner- und Dateinamen verwenden
+
+
+
+#############################
 ### Eckdaten des Projekts ###
+#############################
 
 TOPOLOGIEN
-    - Diskreter Aufbau in TTL, CMOS, NMOS (viel SpaÃŸ xD)
+    - Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
     - Good ol' TTL
-    - CMOS - Hier ausschlieÃŸlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
+    - CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
 
 
 ARCHITEKTUR
@@ -14,10 +72,54 @@ ARCHITEKTUR
 
 
 BAUTEILE
-    Alle verwendeten Bauteile mÃ¼ssen beliebig nachbeschaffbar sein.
+    Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein.
 
     Das Projekt verfolgt weiters eine Divide&Conquer-Strategie: Jeder Teilnehmende
     entwickelt mindestens ein Modul und diese Module stehen den restlichen
-    Teilnehmenden mindestens als Bausatz zur VerfÃ¼gung; gemeinsame Teilebestellungen
-    machen die Sache billiger, gemeinsame Platinenfertigung in grÃ¶ÃŸerem Volumen
-    macht die Sache schneller und angenehmer fÃ¼r die Gesamtheit.
+    Teilnehmenden mindestens als Bausatz zur Verfügung; gemeinsame Teilebestellungen
+    machen die Sache billiger, gemeinsame Platinenfertigung in größerem Volumen
+    macht die Sache schneller und angenehmer für die Gesamtheit.
+
+
+
+######################
+### Registerlayout ###
+######################
+
+SRC/DST		REGISTER	DESC
+-------		--------	----
+00000		PCL			Program Counter (Low)
+00001		PCH			Program Counter (High)
+00010		SPL			Stack Pointer (Low)
+00011		SPH			Stack Pointer (High)
+00100		MARL		Memory Address Register (Low)
+00101		MARH		Memory Address Register (High)
+00110		MDR			Memory Data Register (Bus access)
+00111		CIR			Current Instruction Register
+
+01000		XL			X-Pointer (Low)
+01001		XH			X-Pointer (High)
+01010		YL			Y-Pointer (Low)
+01011		XH			Y-Pointer (High)
+01100		ZL			Z-Pointer (Low)
+01101		ZH			Z-Pointer (High)
+01110		-			Unused
+01111		-			Unused
+
+10000		R0			GPR 0
+10001		R1			GPR 1
+10010		R2			GPR 2
+10011		R3			GPR 3
+10100		R4			GPR 4
+10101		R5			GPR 5
+10110		R6			GPR 6
+10111		R7			GPR 7
+
+11000		R8			GPR 8
+11001		R9			GPR 9
+11010		R10			GPR 10
+11011		R11			GPR 11
+11100		OPA			ALU Operand A
+11101		OPB			ALU Operand B
+11110		RES			ALU Result
+11111		FLG			Flags Register
