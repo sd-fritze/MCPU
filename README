@@ -1,16 +1,16 @@
 ####################################################
-### Verbindliche Richtlinien für alle Entwickler ###
+### Verbindliche Richtlinien fÃ¼r alle Entwickler ###
 ####################################################
 
 Bitte haltet euch an diese Richtlinien, um eine klare Struktur zu bewahren.
-Dieses Dokument ist bei Änderungen der Projektstruktur unverzüglich anzugleichen.
+Dieses Dokument ist bei Ã„nderungen der Projektstruktur unverzÃ¼glich anzugleichen.
 
 
 ORDNERSTRUKTUR
 
 /                      Root
 |
-+---modules            Layouts für alle Module
++---modules            Layouts fr alle Module
 |   |
 |   +---clock          Taktmodul
 |   |
@@ -20,19 +20,21 @@ ORDNERSTRUKTUR
 |   |   +---core_2     Kernmodul 2
 |   |   +---core_3     Kernmodul 2
 |   |
-|   +---debug		   Layout für Debug-Modul
+|   +---debug		   Layout fÃ¼r Debug-Modul
 |
 +---templates          Vorlagen, die alle benutzen sollten
 |   |
 |   +---eagle          EAGLE-Ressourcen; Scripts, Design Rules, Librarys
 |   |
-|   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
+|   +---modules            Modulvorlagen
+|       |
+|       +---core           Layout fÃ¼r Systemboard
+|       |
+|       +---misc           Layout fÃ¼r sonstiges Modul
 |
-+---modules            Modulvorlagen
++---docs    
 |   |
-|   +---core           Layout für Systemboard
-|   |
-|   +---misc           Layout für sonstiges Modul
+|   +---images         Zeichnungen, PlÃ¤ne jedweder Art (.jpg,.png,.pdf)
 |
 |
 GUIDLINES              Verbindliche Richtlinien
@@ -41,15 +43,15 @@ README                 Liesmich
 
 Sofern nicht anderes angegeben, handelt es sich bei Layouts um Dateien im
 CadSoft EAGLE-Format.
-Schaltplan und Board (.brd,.sch) gehören immer zusammen in ein Verzeichnis.
+Schaltplan und Board (.brd,.sch) gehÃ¶ren immer zusammen in ein Verzeichnis.
 
 
 NOMENKLATUR
 
-- Ordner- und Dateinamen ausschließlich lowercase
-- Kurze, aber prägnante Ordnernamen wählen
+- Ordner- und Dateinamen ausschlieÃŸlich lowercase
+- Kurze, aber prÃ¤gnante Ordnernamen wÃ¤hlen
 - Dateinamen unverwechselbar machen (wenn das Board ein Template ist,
-  sollte der Dateiname 'template' enthalten)
+  sollte die Datei im ordner 'template' enthalten sein)
 - Bitte vornehmlich englische Ordner- und Dateinamen verwenden
 
 
@@ -59,9 +61,9 @@ NOMENKLATUR
 #############################
 
 TOPOLOGIEN
-    - Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
+    - Diskreter Aufbau in TTL, CMOS, NMOS (viel SpaÃŸ xD)
     - Good ol' TTL
-    - CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
+    - CMOS - Hier ausschlieÃŸlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
 
 
 ARCHITEKTUR
@@ -72,13 +74,13 @@ ARCHITEKTUR
 
 
 BAUTEILE
-    Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein.
+    Alle verwendeten Bauteile mÃ¼ssen beliebig nachbeschaffbar sein.
 
     Das Projekt verfolgt weiters eine Divide&Conquer-Strategie: Jeder Teilnehmende
     entwickelt mindestens ein Modul und diese Module stehen den restlichen
-    Teilnehmenden mindestens als Bausatz zur Verfügung; gemeinsame Teilebestellungen
-    machen die Sache billiger, gemeinsame Platinenfertigung in größerem Volumen
-    macht die Sache schneller und angenehmer für die Gesamtheit.
+    Teilnehmenden mindestens als Bausatz zur VerfÃ¼gung; gemeinsame Teilebestellungen
+    machen die Sache billiger, gemeinsame Platinenfertigung in grÃ¶ÃŸerem Volumen
+    macht die Sache schneller und angenehmer fÃ¼r die Gesamtheit.
 
 
 
