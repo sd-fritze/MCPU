@@ -12,7 +12,7 @@ Projekt, um das MCPU-System später auch - auf welche Weise, das entscheidet
 sich später - tatsächlich produktiv einsetzen zu können.
 
 Der physikalische Aufbau der CPU und ihrer Erweiterungen erfolgt modulweise
-und, je nach Geschmack, mit einer der folgenden Topologien: TTL, CMOS (HCT)
+und, je nach Geschmack, mit einer der folgenden Topologien: TTL, CMOS (ACT/HCT)
 oder aus einzelnen Transistoren diskret aufgebaut. Höher integrierte Bausteine
 (PLAs, PLDs) jedweder Art sind nicht erlaubt.
 
