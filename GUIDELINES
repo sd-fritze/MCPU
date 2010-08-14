@@ -1,0 +1,76 @@
+Verbindliche Richtlinien für alle Entwickler
+-------------------------------------------------------------------------------
+
+Dieses Dokument richtet sich an alle Entwickler des MCPU-Projekts. Bitte haltet
+euch an die folgenden Richtlinien, um eine klare Projektstruktur zu bewahren.
+Bei Änderungen derselben ist dieses Dokument unverzüglich zu aktualisieren.
+
+
+1. NOMENKLATUR
+
+- Ordner- und Dateinamen ausschließlich kleingeschrieben (lowercase).
+- Kurze, aber prägnante Ordnernamen wählen.
+- Dateinamen unverwechselbar machen (wenn das Board ein Template ist,
+  sollte der Dateiname den Begriff 'template' enthalten).
+- Bitte vornehmlich englische Ordner- und Dateinamen verwenden.
+
+
+2. ORDNERSTRUKTUR
+
+/                      Root
+|
++---modules            Layouts für alle Module
+|   |
+|   +---clock          Taktmodul
+|   |
+|   +---core           Kernmodule
+|   |   |
+|   |   +---core_1     Kernmodul 1
+|   |   |              INT flip-flop; register CIR+latch; microcode sequencer
+|   |   |
+|   |   +---core_2     Kernmodul 2
+|   |   |              registers MARH,MARL,PCH,PCL; PC to MAR logic;
+|   |   |              MDR (just a transceiver); /BUSREAD,BUSWRITE generator
+|   |   |
+|   |   +---core_3     Kernmodul 3
+|   |   |              /MME_L generator; RAM; registers SPH,SPL
+|   |   |
+|   |   +---core_4     Kernmodul 4
+|   |                  registers XH,XL,YH,YL,ZH,ZL,R[0..9]
+|   |
+|   +---debug		   Debug-Modul
+|
++---templates          Vorlagen, die alle benutzen sollten
+|   |
+|   +---eagle          EAGLE-Ressourcen; Scripts, Design Rules, Librarys
+|   |
+|   +---modules        Modulvorlagen
+|       |
+|       +---core       Layout für Systemboard
+|       +---core_alu   Layout für Systemboard mit ALU-Interface
+|       +---misc       Layout für sonstiges Modul
+|
++---docs
+|   |
+|   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
+|
+|
+GUIDELINES             Dieses Dokument
+NOTES                  Temporäre Notizen - Immer mal wieder reinschauen!
+README                 Liesmich
+
+
+Sofern nicht anderes angegeben, handelt es sich bei Layouts um Dateien im
+CadSoft EAGLE-Format. Schaltplan und Board (.brd,.sch) gehören immer zusammen
+in ein Verzeichnis. Es sollte nach Möglichkeit ausschließlich mit dieser
+Software gelayoutet werden, um alles unter einem Hut zu haben.
+
+
+3. BAUTEILE und FERTIGUNG
+
+Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein. Das Projekt
+verfolgt eine Divide&Conquer-Strategie: Jeder Teilnehmende entwickelt
+mindestens ein Modul und diese Module stehen den restlichen Teilnehmenden
+mindestens als Bausatz zur Verfügung; gemeinsame Teilebestellungen machen die
+Sache billiger, gemeinsame Platinenfertigung in größerem Volumen macht die
+Sache schneller und angenehmer für die Gesamtheit.

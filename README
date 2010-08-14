@@ -1,133 +1,41 @@
-####################################################
-### Verbindliche Richtlinien für alle Entwickler ###
-####################################################
+MCPU - Mosfetkiller Community Project Ultra-processor
+-------------------------------------------------------------------------------
 
-Bitte haltet euch an diese Richtlinien, um eine klare Struktur zu bewahren.
-Dieses Dokument ist bei Änderungen der Projektstruktur unverzüglich anzugleichen.
+Die MCPU ist ein Gemeinschaftsprojekt, das im August 2010 von einer Hand voll
+Mitgliedern des mosfetkiller-Forums[1] ins Leben gerufen wurde.
 
+Ziel des Unterfangens ist die Entwicklung einer funktionsfähigen CPU mit
+annehmbarer Geschwindigkeit im MHz-Bereich und einer verhältnismäßig simplen,
+aber dennoch leistungsfähigen Architektur. Obwohl 'Ultra-processor' eher als
+Selbstironie zu verstehen ist, stellen wir dennoch reale Anforderungen an unser
+Projekt, um das MCPU-System später auch - auf welche Weise, das entscheidet
+sich später - tatsächlich produktiv einsetzen zu können.
 
-ORDNERSTRUKTUR
+Der physikalische Aufbau der CPU und ihrer Erweiterungen erfolgt modulweise
+und, je nach Geschmack, mit einer der folgenden Topologien: TTL, CMOS (HCT)
+oder aus einzelnen Transistoren diskret aufgebaut. Höher integrierte Bausteine
+(PLAs, PLDs) jedweder Art sind nicht erlaubt.
 
-/                      Root
-|
-+---modules            Layouts für alle Module
-|   |
-|   +---clock          Taktmodul
-|   |
-|   +---core           Kernmodule
-|   |   |
-|   |   +---core_1     Kernmodul 1
-|   |   |                INT flip-flop; register CIR+latch; microcode sequencer
-|   |   +---core_2     Kernmodul 2
-|   |   |                registers MARH,MARL,PCH,PCL; PC to MAR logic;
-|   |   |                MDR (just a transceiver); /BUSREAD,BUSWRITE generator
-|   |   +---core_3     Kernmodul 3
-|   |   |                /MME_L generator; RAM; registers SPH,SPL
-|   |   +---core_4     Kernmodul 4
-|   |                    registers XH,XL,YH,YL,ZH,ZL,R[0..9]
-|   |
-|   +---debug		   Debug-Modul
-|
-+---templates          Vorlagen, die alle benutzen sollten
-|   |
-|   +---eagle          EAGLE-Ressourcen; Scripts, Design Rules, Librarys
-|   |
-|   +---modules            Modulvorlagen
-|       |
-|       +---core           Layout für Systemboard
-|       +---core_alu       Layout für Systemboard mit ALU-Interface
-|       +---misc           Layout für sonstiges Modul
-|
-+---docs
-|   |
-|   +---images         Zeichnungen, Pläne jedweder Art (.jpg,.png,.pdf)
-|
-|
-NOTES                  Temporäre Notizen - Immer mal wieder reinschauen!
-README                 Liesmich
+Es wird das altbewährte Baukastenprinzip verfolgt: Der CPU-Kern, der als in
+sich geschlossene Einheit zu betrachten ist, ist durch Zusatzmodule beliebig
+erweiterbar. Über einen breiten Systembus, der zum jetztigen Zeitpunkt immer
+noch ausbaufähig ist, können alle erdenklichen Modultypen an den MCPU-Kern
+gekoppelt werden.
+
+Jeder ist herzlich eingeladen, seinen Beitrag zu leisten und der MCPU zum
+Erfolg zu verhelfen.
+
+Wir layouten in CadSoft EAGLE und benutzen git als Versioning-System.
+
+Sollten wir dein Interesse geweckt haben, dann besuche bitte folgende Website
+und überzeuge dich selbst vom Reiz der CPU-Entwicklung!
 
 
-Sofern nicht anderes angegeben, handelt es sich bei Layouts um Dateien im
-CadSoft EAGLE-Format.
-Schaltplan und Board (.brd,.sch) gehören immer zusammen in ein Verzeichnis.
+    http://github.com/sd-fritze/MCPU
 
 
-NOMENKLATUR
+Beste Grüße,
+das MCPU-Entwicklerteam
 
-- Ordner- und Dateinamen ausschließlich lowercase
-- Kurze, aber prägnante Ordnernamen wählen
-- Dateinamen unverwechselbar machen (wenn das Board ein Template ist,
-  sollte die Datei im ordner 'template' enthalten sein)
-- Bitte vornehmlich englische Ordner- und Dateinamen verwenden
-
-
-
-#############################
-### Eckdaten des Projekts ###
-#############################
-
-TOPOLOGIEN
-    - Diskreter Aufbau in TTL, CMOS, NMOS (viel Spaß xD)
-    - Good ol' TTL
-    - CMOS - Hier ausschließlich die ACT- oder HCT-Serien verwenden, um mit TTL kompatibel zu bleiben
-
-
-ARCHITEKTUR
-    - Von-Neumann Architektur; 8 Bit Daten, 16 Bit Adressen
-    - Little Endian
-    - 1-phasige Clock
-    - Mikrocode
-
-
-BAUTEILE
-    Alle verwendeten Bauteile müssen beliebig nachbeschaffbar sein.
-
-    Das Projekt verfolgt weiters eine Divide&Conquer-Strategie: Jeder Teilnehmende
-    entwickelt mindestens ein Modul und diese Module stehen den restlichen
-    Teilnehmenden mindestens als Bausatz zur Verfügung; gemeinsame Teilebestellungen
-    machen die Sache billiger, gemeinsame Platinenfertigung in größerem Volumen
-    macht die Sache schneller und angenehmer für die Gesamtheit.
-
-
-
-######################
-### Registerlayout ###
-######################
-
-SRC/DST		REGISTER	DESC
--------		--------	----
-00000		PCL			Program Counter (Low)
-00001		PCH			Program Counter (High)
-00010		SPL			Stack Pointer (Low)
-00011		SPH			Stack Pointer (High)
-00100		MARL		Memory Address Register (Low)
-00101		MARH		Memory Address Register (High)
-00110		MDR			Memory Data Register (Bus access)
-00111		CIR			Current Instruction Register
-
-01000		XL			X-Pointer (Low)
-01001		XH			X-Pointer (High)
-01010		YL			Y-Pointer (Low)
-01011		XH			Y-Pointer (High)
-01100		ZL			Z-Pointer (Low)
-01101		ZH			Z-Pointer (High)
-01110		R0          GPR 0
-01111		R1          GPR 1
-
-10000		R2			GPR 2
-10001		R3			GPR 3
-10010		R4			GPR 4
-10011		R5			GPR 5
-10100		R6			GPR 6
-10101		R7			GPR 7
-10110		R8			GPR 8
-10111		R9			GPR 9
-
-11000		OPA			ALU Operand A
-11001		OPB			ALU Operand B
-11010		RES			ALU Result
-11011		FLG			Flags Register
-11100       -           Unused
-11101       -           Unused
-11110       -           Unused
-11111       <VOID>      Reserved
+-------------------------------------------------------------------------------
+[1] http://forum.mosfetkiller.de/
