@@ -17,12 +17,14 @@ ORDNERSTRUKTUR
 |   +---core           Kernmodule
 |   |   |
 |   |   +---core_1     Kernmodul 1
-|   |                    INT flip-flop; register CIR+latch; microcode sequencer
+|   |   |                INT flip-flop; register CIR+latch; microcode sequencer
 |   |   +---core_2     Kernmodul 2
-|   |                    registers MARH,MARL,PCH,PCL; PC to MAR logic;
-|   |                    MDR (just a transceiver); /BUSREAD,BUSWRITE generator
+|   |   |                registers MARH,MARL,PCH,PCL; PC to MAR logic;
+|   |   |                MDR (just a transceiver); /BUSREAD,BUSWRITE generator
 |   |   +---core_3     Kernmodul 3
-|   |                    /MME_L generator; RAM; registers SPH,SPL
+|   |   |                /MME_L generator; RAM; registers SPH,SPL
+|   |   +---core_4     Kernmodul 4
+|   |                    registers XH,XL,YH,YL,ZH,ZL,R[0..9]
 |   |
 |   +---debug		   Debug-Modul
 |
@@ -109,23 +111,23 @@ SRC/DST		REGISTER	DESC
 01011		XH			Y-Pointer (High)
 01100		ZL			Z-Pointer (Low)
 01101		ZH			Z-Pointer (High)
-01110		-			Unused
-01111		-			Unused
+01110		R0          GPR 0
+01111		R1          GPR 1
 
-10000		R0			GPR 0
-10001		R1			GPR 1
-10010		R2			GPR 2
-10011		R3			GPR 3
-10100		R4			GPR 4
-10101		R5			GPR 5
-10110		R6			GPR 6
-10111		R7			GPR 7
+10000		R2			GPR 2
+10001		R3			GPR 3
+10010		R4			GPR 4
+10011		R5			GPR 5
+10100		R6			GPR 6
+10101		R7			GPR 7
+10110		R8			GPR 8
+10111		R9			GPR 9
 
-11000		R8			GPR 8
-11001		R9			GPR 9
-11010		R10			GPR 10
-11011		R11			GPR 11
-11100		OPA			ALU Operand A
-11101		OPB			ALU Operand B
-11110		RES			ALU Result
-11111		FLG			Flags Register
+11000		OPA			ALU Operand A
+11001		OPB			ALU Operand B
+11010		RES			ALU Result
+11011		FLG			Flags Register
+11100       -           Unused
+11101       -           Unused
+11110       -           Unused
+11111       <VOID>      Reserved
